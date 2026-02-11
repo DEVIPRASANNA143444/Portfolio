@@ -790,3 +790,21 @@ body {
         justify-content: center; /* Centers the buttons */
     }
 }
+/* =========================================
+   PROJECT BUTTONS & ACTIONS LAYOUT
+========================================= */
+
+.project-actions {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap; /* Ensures buttons stack cleanly on mobile */
+    margin-top: 15px;
+}
+
+.project-actions .btn-sm {
+    margin-top: 0; /* Overrides previous spacing for perfect alignment */
+    display: inline-flex;
+    align-items: center;
+    gap: 6px; /* Space between the FontAwesome icon and text */
+}
