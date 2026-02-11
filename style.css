@@ -715,4 +715,78 @@ body {
         opacity: 1;
         transform: translateY(0);
     }
+
+}
+
+/* =========================================
+   HERO PROFILE IMAGE ADDITIONS
+========================================= */
+
+/* Update hero content to use flexbox */
+.hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px; /* Space between image and text */
+    width: 100%;
+}
+
+/* Text takes up remaining space */
+.hero-text {
+    flex: 1;
+}
+
+/* Profile Image Wrapper - Glowing & Floating */
+.hero-image-wrapper {
+    flex-shrink: 0;
+    width: 380px;
+    height: 380px;
+    border-radius: 50%;
+    border: 3px solid var(--accent-color);
+    box-shadow: 0 0 30px rgba(16, 185, 129, 0.4), inset 0 0 20px rgba(16, 185, 129, 0.2);
+    padding: 12px; /* Creates the gap between border and image */
+    background: rgba(15, 23, 42, 0.6); /* Glassy backdrop behind image */
+    backdrop-filter: blur(5px);
+    animation: floatProfile 4s ease-in-out infinite;
+    position: relative;
+    z-index: 5;
+}
+
+/* Actual Image inside the wrapper */
+.hero-profile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/* Floating Animation Keyframes */
+@keyframes floatProfile {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0px); }
+}
+
+/* Responsive adjustments for mobile */
+@media (max-width: 900px) {
+    .hero-content {
+        flex-direction: column; /* Stacks image above text */
+        text-align: center;
+        gap: 30px;
+        margin-top: 50px; /* Prevents nav overlap */
+    }
+
+    .hero-image-wrapper {
+        width: 280px;
+        height: 280px;
+    }
+
+    .hero-desc {
+        margin-left: auto;
+        margin-right: auto; /* Centers the description text */
+    }
+
+    .cta-buttons {
+        justify-content: center; /* Centers the buttons */
+    }
 }
